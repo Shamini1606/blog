@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyparser = require("body-parser");
 const postRoutes = require("./routes/posts");
+const categoryRoutes = require("./routes/categories");
+
 const cors = require("cors");
 
 const app = express();
@@ -19,6 +21,7 @@ mongoose
 
 // Use toutes
 app.use("/api/posts", postRoutes);
+app.use("/api/categories", categoryRoutes);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 //   time 2.21.29 blog web
